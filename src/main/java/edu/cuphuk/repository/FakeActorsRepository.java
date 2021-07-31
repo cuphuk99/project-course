@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class FakeActorsRepository {
@@ -27,7 +28,10 @@ public class FakeActorsRepository {
 
 
         public Actors create(Actors actors) {
-            System.out.println("actors has been accepted "+actors.toString());
+            String id = UUID.randomUUID().toString();
+            actors.setId(id);
+            actors.setCreatedAt(LocalDateTime.now());
+            actors.setUpdatedAt(LocalDateTime.now());
             list.add(actors);
             return actors;
         }
@@ -44,10 +48,11 @@ public class FakeActorsRepository {
         public Actors update(Actors actors) {
             String id = actors.getId();
             Actors actorToUpdate = this.get(id);
+            actors.setCreatedAt(actorToUpdate.getCreatedAt());
             int index = list.indexOf(actorToUpdate);
             actors.setUpdatedAt(LocalDateTime.now());
             list.remove(actorToUpdate);
-            list.add(actors);
+            list.add(index, actors);
 
             return actors;
         }
@@ -64,7 +69,7 @@ public class FakeActorsRepository {
 
 
         public List<Actors> getAll() {
-            return null;
+            return list;
         }
 
 }

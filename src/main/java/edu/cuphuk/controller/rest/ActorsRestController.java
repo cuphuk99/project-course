@@ -33,9 +33,14 @@ public class ActorsRestController {
 
     @PostMapping("/create")
     public Actors create(@RequestBody Actors actors){
-        //this.groupService.create(group);return group;
+
         return service.create(actors);
     }
+    @PostMapping("/update")
+    public Actors update(@RequestBody Actors actors){
+        return service.update(actors);
+    }
+
 
 
 

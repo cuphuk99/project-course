@@ -4,16 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Create a show</title>
+    <style>
+        body {
+            background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+        }
+        .button7 {
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            padding: .8em 1em calc(.8em + 3px);
+            border-radius: 3px;
+            background: rgb(64,199,129);
+            box-shadow: 0 -3px rgb(53,167,110) inset;
+            transition: 0.2s;
+        }
+        .button7:hover { background: rgb(53, 167, 110); }
+        .button7:active {
+            background: rgb(33,147,90);
+            box-shadow: 0 3px rgb(33,147,90) inset;
+        }
 
+    </style>
 </head>
 <body>
 
-    <h1>Creation</h1>
+    <h1 style="text-align: center; ">Create new show</h1>
 
     <div>
         <fieldset>
-            <legend>Add item</legend>
-            <form name="shows" action="" method="POST">
+            <legend style="font-size: 22px;">Add show</legend>
+            <form name="shows" action="" method="POST" style="font-size: 20px; ">
                 Name:<@spring.formInput "form.name" "" "text"/>
                 <br>
                 Description:<@spring.formInput "form.description" "" "text"/>
@@ -22,7 +42,7 @@
                 <br>
                 Year:<@spring.formInput "form.year" "" "text"/>
                 <br>
-                <input type="submit" value="Create">
+                <input type="submit" value="Create" class="button7">
             </form>
         </fieldset>
     </div>

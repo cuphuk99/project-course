@@ -14,15 +14,9 @@
         <fieldset>
             <legend>Add item</legend>
             <form name="actors" action="" method="POST">
-                Name:<@spring.formInput "form.name" "" "text"/>
+                Actor: <@spring.formSingleSelect "form.actor" actors ""/>
                 <br>
-                Surname:<@spring.formInput "form.surname" "" "text"/>
-                <br>
-                Patronymic:<@spring.formInput "form.patronymic" "" "text"/>
-                <br>
-                Experience:<@spring.formInput "form.experience" "" "text"/>
-                <br>
-                Rank:<@spring.formInput "form.rank" "" "text"/>
+                Show: <@spring.formSingleSelect "form.show" shows ""/>
                 <br>
                 Description:<@spring.formInput "form.description" "" "text"/>
                 <input type="submit" value="Create">

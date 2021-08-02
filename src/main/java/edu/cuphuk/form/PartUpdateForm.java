@@ -12,6 +12,9 @@ public class PartUpdateForm {
     private String actor;
     private String show;
 
+    public PartUpdateForm() {
+    }
+
     public PartUpdateForm(Part part) {
         this.id = part.getId();
         this.description = part.getDescription();
